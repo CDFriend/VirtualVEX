@@ -46,11 +46,11 @@ public class Main_Clawbot : vvRobotBase
                 {
                     if(Mathf.Abs(motor[2]) > 1)
                     {
-                        lift.rigidbody.isKinematic = false;
+						lift.GetComponent<Rigidbody>().isKinematic = false;
                         setMotor(lift, -motor[2]);
                     }
                     else
-                        lift.rigidbody.isKinematic = true;
+						lift.GetComponent<Rigidbody>().isKinematic = true;
                 }
             }
             else
@@ -59,11 +59,11 @@ public class Main_Clawbot : vvRobotBase
                 setMotors(frontLeft, backLeft, motor[1]/1.1f);
                 if (Mathf.Abs(motor[2]) > 1)
                 {
-                    lift.rigidbody.isKinematic = false;
+					lift.GetComponent<Rigidbody>().isKinematic = false;
                     setMotor(lift, -motor[2]);
                 }
                 else
-                    lift.rigidbody.isKinematic = true;
+					lift.GetComponent<Rigidbody>().isKinematic = true;
                 lMotorPowerPrev_ = motor[1];
                 rMotorPowerPrev_ = motor[0];
                 armMotorPowerPrev_ = motor[2];
@@ -81,8 +81,8 @@ public class Main_Clawbot : vvRobotBase
             backRight.motorTorque = 0;
             backLeft.motorTorque = 0;
             lift.transform.Translate(0, 0, 0);
-            claw1.rigidbody.AddRelativeTorque(0, 0, 0);
-            claw2.rigidbody.AddRelativeTorque(0, 0, 0);
+			claw1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+			claw2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
         }
     }
 }

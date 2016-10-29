@@ -30,7 +30,7 @@ public class BallPhysics : MonoBehaviour {
             Vector3 normDown = down.normalized;
             if (debug) print(normDown);
             //Set the center of mass to face the ground with a magnitude of 0.12 (about half the radius)
-            this.rigidbody.centerOfMass = down * 0.12f;
+						this.GetComponent<Rigidbody>().centerOfMass = down * 0.12f;
         }
     }
 }

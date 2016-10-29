@@ -35,7 +35,7 @@ public class Main_NZBot : vvRobotBase
             setMotors(frontLeft, backLeft, motor[1]);
             if(Mathf.Abs(motor[2]) > 5)
             {
-                tray.rigidbody.isKinematic = false;
+                tray.GetComponent<Rigidbody>().isKinematic = false;
                 if (motor[2] > 0)
                 {
                     setMotor(armL1, -motor[2] / 40);
@@ -45,11 +45,11 @@ public class Main_NZBot : vvRobotBase
                 }
             }
             else
-                tray.rigidbody.isKinematic = true;
+                tray.GetComponent<Rigidbody>().isKinematic = true;
             if (Mathf.Abs(motor[3]) > 5)
-                intake.collider.isTrigger = true;
+				intake.GetComponent<Collider>().isTrigger = true;
             else
-                intake.collider.isTrigger = false;
+				intake.GetComponent<Collider>().isTrigger = false;
         }
 
         //stop robot if time is up
@@ -59,10 +59,10 @@ public class Main_NZBot : vvRobotBase
             frontLeft.motorTorque = 0;
             backRight.motorTorque = 0;
             backLeft.motorTorque = 0;
-            armL1.rigidbody.AddRelativeTorque(0, 0, 0);
-            armL2.rigidbody.AddRelativeTorque(0, 0, 0);
-            armR1.rigidbody.AddRelativeTorque(0, 0, 0);
-            armR2.rigidbody.AddRelativeTorque(0, 0, 0);
+            armL1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armL2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armR1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armR2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
         }
     }
 }

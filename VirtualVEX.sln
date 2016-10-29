@@ -5,10 +5,6 @@ Project("{AC63DD28-6908-B0FD-AF46-6E8B1D55ABEF}") = "VirtualVEX", "Assembly-CSha
 EndProject
 Project("{AC63DD28-6908-B0FD-AF46-6E8B1D55ABEF}") = "VirtualVEX", "Assembly-CSharp.csproj", "{46225591-AB0C-D3FD-517F-3991E02B70EA}"
 EndProject
-Project("{AC63DD28-6908-B0FD-AF46-6E8B1D55ABEF}") = "VirtualVEX", "Assembly-UnityScript-firstpass.unityproj", "{E658F07F-5DFA-536A-B464-902CE4BCBF49}"
-EndProject
-Project("{AC63DD28-6908-B0FD-AF46-6E8B1D55ABEF}") = "VirtualVEX", "Assembly-UnityScript.unityproj", "{5D6AD50C-DB39-31AD-23BE-65E1F60B165A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,14 +19,6 @@ Global
 		{46225591-AB0C-D3FD-517F-3991E02B70EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46225591-AB0C-D3FD-517F-3991E02B70EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46225591-AB0C-D3FD-517F-3991E02B70EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E658F07F-5DFA-536A-B464-902CE4BCBF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E658F07F-5DFA-536A-B464-902CE4BCBF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E658F07F-5DFA-536A-B464-902CE4BCBF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E658F07F-5DFA-536A-B464-902CE4BCBF49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D6AD50C-DB39-31AD-23BE-65E1F60B165A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D6AD50C-DB39-31AD-23BE-65E1F60B165A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D6AD50C-DB39-31AD-23BE-65E1F60B165A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D6AD50C-DB39-31AD-23BE-65E1F60B165A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +41,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal

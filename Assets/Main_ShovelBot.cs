@@ -62,7 +62,7 @@ public class Main_ShovelBot : vvRobotBase {
             }
             if (Mathf.Abs(motor[2]) > 5)
             {
-                anchor.rigidbody.isKinematic = false;
+				anchor.GetComponent<Rigidbody>().isKinematic = false;
                 if (motor[2] > 0)
                 {
                     setMotor(armL1, -80, motor[2] * 1.5f);
@@ -83,11 +83,11 @@ public class Main_ShovelBot : vvRobotBase {
                 }
             }
             else
-                anchor.rigidbody.isKinematic = true;
+				anchor.GetComponent<Rigidbody>().isKinematic = true;
             if (Mathf.Abs(motor[3]) < 5 && Mathf.Abs(motor[2]) < 5)
-                scoop.rigidbody.isKinematic = true;
+                scoop.GetComponent<Rigidbody>().isKinematic = true;
             else
-                scoop.rigidbody.isKinematic = false;
+                scoop.GetComponent<Rigidbody>().isKinematic = false;
             setMotor(scoop, motor[3]/10);
         }
 
@@ -98,10 +98,10 @@ public class Main_ShovelBot : vvRobotBase {
             frontLeft.motorTorque = 0;
             backRight.motorTorque = 0;
             backLeft.motorTorque = 0;
-            armL1.rigidbody.AddRelativeTorque(0, 0, 0);
-            armL2.rigidbody.AddRelativeTorque(0, 0, 0);
-            armR1.rigidbody.AddRelativeTorque(0, 0, 0);
-            armR2.rigidbody.AddRelativeTorque(0, 0, 0);
+            armL1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armL2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armR1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armR2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
         }
     }
 }

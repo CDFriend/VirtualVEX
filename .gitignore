@@ -1,2 +1,5 @@
 Library/
 _UpgradeReport_Files/
+Temp/
+obj/
+.DS_Store

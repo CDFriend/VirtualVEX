@@ -34,17 +34,17 @@ public class Main_ConveyorBot : vvRobotBase
             setMotors(frontRight, backRight, motor[0]);
             setMotors(frontLeft, backLeft, motor[1]);
             if (Mathf.Abs(motor[3]) > 1)
-                stopper.collider.isTrigger = true;
+				stopper.GetComponent<Collider>().isTrigger = true;
             else
-                stopper.collider.isTrigger = false;
+				stopper.GetComponent<Collider>().isTrigger = false;
             if (Mathf.Abs(motor[2]) > 1)
             {
-                ramp.rigidbody.isKinematic = false;
+				ramp.GetComponent<Rigidbody>().isKinematic = false;
                 setMotor(ramp, -motor[2] / 40);
             }
             else
             {
-                ramp.rigidbody.isKinematic = true;
+				ramp.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
 
@@ -55,11 +55,11 @@ public class Main_ConveyorBot : vvRobotBase
             frontLeft.motorTorque = 0;
             backRight.motorTorque = 0;
             backLeft.motorTorque = 0;
-            arm1.rigidbody.AddRelativeTorque(0, 0, 0);
-            arm2.rigidbody.AddRelativeTorque(0, 0, 0);
-            intake.rigidbody.AddRelativeTorque(0, 0, 0);
-            ramp.rigidbody.AddRelativeTorque(0, 0, 0);
-            roof.rigidbody.AddRelativeTorque(0, 0, 0);
+            arm1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            arm2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            intake.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            ramp.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            roof.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
         }
     }
 }

@@ -30,9 +30,9 @@ public class Main_VConveyorBot : vvRobotBase
             setMotors(frontRight, backRight, motor[0]);
             setMotors(frontLeft, backLeft, motor[1]);
             if (Mathf.Abs(motor[3]) > 1)
-                stopper.collider.isTrigger = true;
+				stopper.GetComponent<Collider>().isTrigger = true;
             else
-                stopper.collider.isTrigger = false;
+				stopper.GetComponent<Collider>().isTrigger = false;
             if (assembly.transform.localPosition.y <= 0.25 && -motor[2] < 1)
                 setMotor(assembly, 0);
             else if (assembly.transform.localPosition.y >= 0.6 && -motor[2] > 1)

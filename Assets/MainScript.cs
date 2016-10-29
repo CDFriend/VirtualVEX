@@ -30,9 +30,9 @@ class Motor
             wheel.brakeTorque = gearRatio * (float)63.5 - Mathf.Abs(wheel.motorTorque);
         }
         else if (type == "jointVert")
-            attached.rigidbody.AddRelativeTorque(dir * v/10, 0, 0);
+			attached.GetComponent<Rigidbody>().AddRelativeTorque(dir * v/10, 0, 0);
         else if (type == "jointHoriz")
-            attached.rigidbody.AddRelativeTorque(0, dir * v/10, 0);
+			attached.GetComponent<Rigidbody>().AddRelativeTorque(0, dir * v/10, 0);
         else
             MonoBehaviour.print("A fatal error occured");
     }

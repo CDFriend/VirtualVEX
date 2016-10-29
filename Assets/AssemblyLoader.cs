@@ -106,13 +106,13 @@ public class vvRobotBase : MonoBehaviour
         switch (applyMode)
         {
             case MovementMode.DIRECT_VERTICAL:
-                motor.rigidbody.AddRelativeTorque(powerLevel, 0, 0);
+				motor.GetComponent<Rigidbody>().AddRelativeTorque(powerLevel, 0, 0);
                 break;
             case MovementMode.DIRECT_HORIZONTAL:
-                motor.rigidbody.AddRelativeTorque(0, powerLevel, 0);
+				motor.GetComponent<Rigidbody>().AddRelativeTorque(0, powerLevel, 0);
                 break;
             case MovementMode.DIRECT_SIDEWAYS:
-                motor.rigidbody.AddRelativeTorque(0, 0, powerLevel);
+				motor.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, powerLevel);
                 break;
             case MovementMode.LINEAR_VERTICAL:
                 motor.transform.Translate(0, 0, powerLevel);
@@ -140,13 +140,13 @@ public class vvRobotBase : MonoBehaviour
     public void setMotor(GameObject motor, float velocity, float powerLevel)
     {
         if (velocity == 0.0f)
-            motor.hingeJoint.useMotor = false;
+			motor.GetComponent<HingeJoint>().useMotor = false;
         else
         {
-            JointMotor hjMotor = motor.hingeJoint.motor;
+			JointMotor hjMotor = motor.GetComponent<HingeJoint>().motor;
             hjMotor.targetVelocity = velocity;
             hjMotor.force = 100;
-            motor.hingeJoint.motor = hjMotor;
+			motor.GetComponent<HingeJoint>().motor = hjMotor;
         }
     }
 
@@ -291,8 +291,8 @@ public class vvRobotBase : MonoBehaviour
             setSensorValue.Invoke(null, new object[] { SensorValue });
 
             text_ = "Time Remaining: " + (int)owner.getTimeLeft;
-            acceleration_ = (rigidbody.velocity.magnitude - pastVelocity_) / Time.fixedDeltaTime;
-            pastVelocity_ = rigidbody.velocity.magnitude;
+			acceleration_ = (GetComponent<Rigidbody>().velocity.magnitude - pastVelocity_) / Time.fixedDeltaTime;
+			pastVelocity_ = GetComponent<Rigidbody>().velocity.magnitude;
         }
     }
 
@@ -339,13 +339,13 @@ public class vvRobotBase : MonoBehaviour
 
     void physWinFunc(int windowId)
     {
-        string content = "Coordinates: " + this.rigidbody.position + "\n"
-            + "Velocity Vector: (" + System.String.Format("{0:0.###}", this.rigidbody.velocity.x) + ", "
-            + System.String.Format("{0:0.###}", this.rigidbody.velocity.z) + ")\n"
-            + "Velocity Magnitude: " + System.String.Format("{0:0.###}", this.rigidbody.velocity.magnitude) + " m/s\n"
-            + "Angular Velocity: " + System.String.Format("{0:0.###}", this.rigidbody.angularVelocity.magnitude) + "\n"
+		string content = "Coordinates: " + this.GetComponent<Rigidbody>().position + "\n"
+            + "Velocity Vector: (" + System.String.Format("{0:0.###}", this.GetComponent<Rigidbody>().velocity.x) + ", "
+            + System.String.Format("{0:0.###}", this.GetComponent<Rigidbody>().velocity.z) + ")\n"
+            + "Velocity Magnitude: " + System.String.Format("{0:0.###}", this.GetComponent<Rigidbody>().velocity.magnitude) + " m/s\n"
+            + "Angular Velocity: " + System.String.Format("{0:0.###}", this.GetComponent<Rigidbody>().angularVelocity.magnitude) + "\n"
             + "Acceleration: " + System.String.Format("{0:0.##}", acceleration_) + "m/s2\n"
-            + "Current Momentum: " + System.String.Format("{0:0.###}", (this.rigidbody.velocity.magnitude * this.rigidbody.mass));
+            + "Current Momentum: " + System.String.Format("{0:0.###}", (this.GetComponent<Rigidbody>().velocity.magnitude * this.GetComponent<Rigidbody>().mass));
         GUI.Label(new Rect(15, 30, Screen.width - 15, Screen.height - 30), content);
         GUI.DragWindow(new Rect(0, 0, 10000, 20));
     }

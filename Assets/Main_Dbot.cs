@@ -35,18 +35,18 @@ public class Main_Dbot : vvRobotBase
             setMotors(frontLeft, backLeft, motor[1]);
             if (Mathf.Abs(motor[2]) > 5)
             {
-                holder.rigidbody.isKinematic = false;
+				holder.GetComponent<Rigidbody>().isKinematic = false;
                 setMotor(armL1, -motor[2] / 10);
                 setMotor(armL2, -motor[2] / 10);
                 setMotor(armR1, -motor[2] / 10);
                 setMotor(armR2, -motor[2] / 10);
             }
             else
-                holder.rigidbody.isKinematic = true;
+				holder.GetComponent<Rigidbody>().isKinematic = true;
             if (Mathf.Round(motor[3]) != 0)
-                intake.collider.isTrigger = true;
+				intake.GetComponent<Collider>().isTrigger = true;
             else
-                intake.collider.isTrigger = false;
+				intake.GetComponent<Collider>().isTrigger = false;
         }
 
         //stop robot if time is up
@@ -56,10 +56,10 @@ public class Main_Dbot : vvRobotBase
             frontLeft.motorTorque = 0;
             backRight.motorTorque = 0;
             backLeft.motorTorque = 0;
-            armL1.rigidbody.AddRelativeTorque(0, 0, 0);
-            armL2.rigidbody.AddRelativeTorque(0, 0, 0);
-            armR1.rigidbody.AddRelativeTorque(0, 0, 0);
-            armR2.rigidbody.AddRelativeTorque(0, 0, 0);
+            armL1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armL2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armR1.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
+            armR2.GetComponent<Rigidbody>().AddRelativeTorque(0, 0, 0);
         }
     }
 }
